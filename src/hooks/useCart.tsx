@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import { api } from '../services/api';
-import { Product, Stock } from '../types';
+import { Product } from '../types';
 
 interface CartProviderProps {
   children: ReactNode;
@@ -67,7 +67,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const removeProduct = (productId: number) => {
     try {
       const updatedCart = [...cart];
-      const getProductIndex = updatedCart.findIndex(cart => cart.id == productId);
+      const getProductIndex = updatedCart.findIndex(cart => cart.id === productId);
       if(getProductIndex >= 0) {
         updatedCart.splice(getProductIndex, 1);
         setCart(updatedCart);

@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   MdDelete,
   MdAddCircleOutline,
@@ -6,7 +5,6 @@ import {
 } from 'react-icons/md';
 
 import { useCart } from '../../hooks/useCart';
-import { api } from '../../services/api';
 import { formatPrice } from '../../util/format';
 import { Container, ProductTable, Total } from './styles';
 
