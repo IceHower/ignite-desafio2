@@ -4,6 +4,8 @@ import { useCart } from "../../hooks/useCart"
 import { formatPrice } from '../../util/format';
 import { PaymentMethodButton } from "../../components/PaymentMethodButton";
 import { useState } from "react";
+import InputComponent from "../../components/input";
+import Button from "../../components/button";
 export function Checkout() {
     const userColor =  "#EBA2A2";
     const [paymentMethodSection, setPayementMethodSection] = useState("bankSlip");
@@ -52,7 +54,19 @@ export function Checkout() {
                     <PaymentMethodButton type="pix" onClick={() => setPayementMethodSection("pix")}/>
                 </PaymentMethodsContainer>
                 {paymentMethodSection === "bankSlip" && (
-                    <p>BOLETO</p>
+                    <form>
+                        <InputComponent 
+                            onChange={() => {}}
+                            label="CPF"
+                        />
+                        <InputComponent 
+                            onChange={() => {}}
+                            label="Nome"
+                        />
+                        <Button backgroundColor={userColor}>
+                            Finalizar pagamento
+                        </Button>
+                    </form>
                 )}
                 {paymentMethodSection === "creditCard" && (
                     <p>CARTAO</p>

@@ -21,9 +21,9 @@ export const Container = styled.div`
 `
 export const InputContainer = styled.div<ContainerProps>`
   background: transparent;
-  border-radius: 10px;
+  border-radius: 5px;
   border: ${(props) => props.border && props.border};
-  padding: 16px;
+  padding: 8px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -66,10 +66,10 @@ export const InputContainer = styled.div<ContainerProps>`
     background: transparent;
     border: 0;
     outline: 0;
-    font-size: 1.3rem;
+    font-size: 16px;
     padding: 0;
     &::placeholder {
-      font-size: 1.3rem;
+      font-size: 16px;
       font-weight: 500;
       color: #d1d1d1;
     }

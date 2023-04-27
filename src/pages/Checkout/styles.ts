@@ -69,6 +69,11 @@ export const CheckoutContainer = styled.div`
     flex: 1;
     background-color: #FFF;
     padding: 2rem;
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 `
 
 export const PaymentMethodsContainer = styled.div`
@@ -77,5 +82,6 @@ export const PaymentMethodsContainer = styled.div`
     max-height: 55px;
     gap: 10px;
     border-bottom: 1px solid #d1d1d1;
+    margin-bottom: 10px;
     justify-content: center;
 `
