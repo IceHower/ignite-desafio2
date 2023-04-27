@@ -9,7 +9,11 @@ export const Container = styled.header`
 
   a {
     transition: opacity 0.2s;
-
+    text-decoration: none;
+    p {
+      font-size: 2rem;
+      color: #0C89BB;
+    }
     &:hover {
       opacity: 0.7;
     }
@@ -20,14 +24,14 @@ export const Cart = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-
+  
   div {
     text-align: right;
     margin-right: 10px;
 
     strong {
       display: block;
-      color: #fff;
+      color: #0C89BB;
     }
 
     span {
