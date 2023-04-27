@@ -40,7 +40,7 @@
     },
     {
       "id": 3,
-      "title": "Tênis Adidas Duramo Lite 2.0",
+      "title": "Tênis Adidas DL 2",
       "price": 219.9,
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg"
     },
@@ -52,7 +52,7 @@
     },
     {
       "id": 6,
-      "title": "Tênis Adidas Duramo Lite 2.0",
+      "title": "Tênis Adidas DL 3",
       "price": 219.9,
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg"
     },

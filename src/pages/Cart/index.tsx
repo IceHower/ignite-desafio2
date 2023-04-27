@@ -7,6 +7,7 @@ import {
 import { useCart } from '../../hooks/useCart';
 import { formatPrice } from '../../util/format';
 import { Container, ProductTable, Total } from './styles';
+import { useHistory } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -18,7 +19,7 @@ interface Product {
 
 const Cart = (): JSX.Element => {
   const { cart, removeProduct, updateProductAmount } = useCart();
-
+  const history = useHistory();
  const cartFormatted = cart.map(product => ({
    ...product,
    subtotal: product.price * product.amount,
@@ -116,7 +117,7 @@ const Cart = (): JSX.Element => {
       </ProductTable>
 
       <footer>
-        <button type="button">Finalizar pedido</button>
+        <button type="button" onClick={() => history.push('/checkout')}>Finalizar pedido</button>
 
         <Total>
           <span>TOTAL</span>
