@@ -7,7 +7,7 @@ import { useState } from "react";
 import InputComponent from "../../components/input";
 import Button from "../../components/button";
 export function Checkout() {
-    const userColor =  "#EBA2A2";
+    const userColor =  "#0C89BB";
     const [paymentMethodSection, setPayementMethodSection] = useState("bankSlip");
     const { cart } = useCart();
     const cartFormatted = cart.map(product => ({

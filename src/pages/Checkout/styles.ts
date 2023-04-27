@@ -34,7 +34,7 @@ export const SectionItems = styled.section<SectionItemsProps>`
     div {
         p {
             font-weight: 600;
-            color: #767676;
+            color: ${props => getContrastYIQ(props.backgroundColor)};
         }
         strong {
             font-size: 32px;
