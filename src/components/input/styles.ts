@@ -4,6 +4,7 @@ interface ContainerProps {
   isFocused: boolean
   isFilled: boolean
   variant: 'primary' | 'ghost' | 'representantes'
+  filledColor?: string
   border?: string
 }
 export const LabelText = styled.text`
@@ -53,12 +54,12 @@ export const InputContainer = styled.div<ContainerProps>`
   ${(props) =>
     props.isFocused &&
     css`
-      border-color: #50cfc9;
+      border-color: ${props.filledColor};
     `}
   ${(props) =>
     props.isFilled &&
     css`
-      border-color: #50cfc9;
+      border-color: ${props.filledColor};
     `}
     
   input {

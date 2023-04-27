@@ -58,10 +58,12 @@ export function Checkout() {
                         <InputComponent 
                             onChange={() => {}}
                             label="CPF"
+                            filledColor={userColor}
                         />
                         <InputComponent 
                             onChange={() => {}}
                             label="Nome"
+                            filledColor={userColor}
                         />
                         <Button backgroundColor={userColor}>
                             Finalizar pagamento
@@ -69,10 +71,48 @@ export function Checkout() {
                     </form>
                 )}
                 {paymentMethodSection === "creditCard" && (
-                    <p>CARTAO</p>
+                    <form>
+                        <InputComponent 
+                            onChange={() => {}}
+                            label="Email"
+                            filledColor={userColor}
+                        />
+                        <InputComponent 
+                            onChange={() => {}}
+                            label="Número do cartao"
+                            filledColor={userColor}
+                        />
+                        <InputComponent 
+                            onChange={() => {}}
+                            label="Nome no cartao"
+                            filledColor={userColor}
+                        />
+                        <InputComponent 
+                            onChange={() => {}}
+                            label="País"
+                            filledColor={userColor}
+                        />
+                        <Button backgroundColor={userColor}>
+                            Finalizar pagamento
+                        </Button>
+                    </form>
                 )}
                 {paymentMethodSection === "pix" && (
-                    <p>PIX</p>
+                    <form>
+                        <InputComponent 
+                            onChange={() => {}}
+                            label="CPF"
+                            filledColor={userColor}
+                        />
+                        <InputComponent 
+                            onChange={() => {}}
+                            label="Nome"
+                            filledColor={userColor}
+                        />
+                        <Button backgroundColor={userColor}>
+                            Finalizar pagamento
+                        </Button>
+                    </form>
                 )}
             </CheckoutContainer>
         </Container>

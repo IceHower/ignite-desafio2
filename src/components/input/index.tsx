@@ -49,6 +49,7 @@ const InputComponent = ({
         variant={variant}
         isFilled={isFilled}
         isFocused={isFocused}
+        filledColor={filledColor}
       >
         <input
           type={type}
