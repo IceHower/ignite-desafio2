@@ -8,6 +8,8 @@ export const Container = styled.main`
     width: 100%;
     border-radius: 5px;
     overflow: hidden;
+    min-height: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
 export const SectionItems = styled.section<SectionItemsProps>`
@@ -42,6 +44,7 @@ export const SectionItems = styled.section<SectionItemsProps>`
         list-style: none;
         width: 100%;
         li {
+            margin-top: 8px;
             width: 100%;
             display: flex;
             gap: 12px;
@@ -62,6 +65,17 @@ export const SectionItems = styled.section<SectionItemsProps>`
 
 export const CheckoutContainer = styled.div`
     display: flex;
+    flex-direction: column;
     flex: 1;
     background-color: #FFF;
+    padding: 2rem;
+`
+
+export const PaymentMethodsContainer = styled.div`
+    display: flex;
+    width: 100%;
+    max-height: 55px;
+    gap: 10px;
+    border-bottom: 1px solid #d1d1d1;
+    justify-content: center;
 `

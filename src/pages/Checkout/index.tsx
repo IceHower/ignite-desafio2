@@ -1,9 +1,12 @@
-import { Container, SectionItems, CheckoutContainer } from "./styles"
+import { Container, SectionItems, CheckoutContainer, PaymentMethodsContainer } from "./styles"
 import logoSeller from "../../assets/images/logo_seller.png"
 import { useCart } from "../../hooks/useCart"
 import { formatPrice } from '../../util/format';
+import { PaymentMethodButton } from "../../components/PaymentMethodButton";
+import { useState } from "react";
 export function Checkout() {
     const userColor =  "#EBA2A2";
+    const [paymentMethodSection, setPayementMethodSection] = useState("bankSlip");
     const { cart } = useCart();
     const cartFormatted = cart.map(product => ({
         ...product,
@@ -35,7 +38,7 @@ export function Checkout() {
                                         <p>{item.title}</p>
                                         <p>{formatPrice(item.price)}</p>
                                     </span>
-                                    <p>{item.amount}</p>
+                                    <p>Qnt. {item.amount}</p>
                                 </div>
                             </section>
                         </li>
@@ -43,7 +46,20 @@ export function Checkout() {
                 </ul>
             </SectionItems>
             <CheckoutContainer>
-                        a
+                <PaymentMethodsContainer>
+                    <PaymentMethodButton type="bankSlip" onClick={() => setPayementMethodSection("bankSlip")}/>
+                    <PaymentMethodButton type="creditCard" onClick={() => setPayementMethodSection("creditCard")}/>
+                    <PaymentMethodButton type="pix" onClick={() => setPayementMethodSection("pix")}/>
+                </PaymentMethodsContainer>
+                {paymentMethodSection === "bankSlip" && (
+                    <p>BOLETO</p>
+                )}
+                {paymentMethodSection === "creditCard" && (
+                    <p>CARTAO</p>
+                )}
+                {paymentMethodSection === "pix" && (
+                    <p>PIX</p>
+                )}
             </CheckoutContainer>
         </Container>
     )
