@@ -6,10 +6,11 @@ import { PaymentMethodButton } from "../../components/PaymentMethodButton";
 import { useState } from "react";
 import InputComponent from "../../components/input";
 import Button from "../../components/button";
+import qrcode from "../../assets/images/qrcode.jpg";
+
 export function Checkout() {
     const userColor =  "#0C89BB";
     const [paymentMethodSection, setPayementMethodSection] = useState("bankSlip");
-    const [hasFinishOrder, setHasFinishOrder] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
     const { cart } = useCart();
@@ -26,7 +27,8 @@ export function Checkout() {
     const handleSubmit = async() => {
         try {
             setIsLoading(true);
-            await new Promise(resolve => setTimeout(resolve, 5000))
+            await new Promise(resolve => setTimeout(resolve, 5000));
+            setPayementMethodSection("finish");
         } catch {
             
         } finally {
@@ -158,6 +160,12 @@ export function Checkout() {
                             Finalizar pagamento
                         </Button>
                     </form>
+                )}
+                {paymentMethodSection === "finish" && (
+                    <>
+                        <img src={qrcode} />
+                        <p>00020126580014br.gov.bcb.pix013600ffd443-200c-4bf7-b81e-1b1ec0d0199352040000530398654042.005802BR5924BARTEBARTE202301191518426009Sao Paulo62240520mpqrinter574568675646304512E</p>
+                    </>
                 )}
             </CheckoutContainer>
         </Container>
