@@ -1,4 +1,4 @@
-import { Container, SectionItems, CheckoutContainer, PaymentMethodsContainer } from "./styles"
+import { Container, SectionItems, CheckoutContainer, PaymentMethodsContainer, Divider } from "./styles"
 import logoSeller from "../../assets/images/logo_seller.png"
 import { useCart } from "../../hooks/useCart"
 import { formatPrice } from '../../util/format';
@@ -49,10 +49,26 @@ export function Checkout() {
             </SectionItems>
             <CheckoutContainer>
                 <PaymentMethodsContainer>
-                    <PaymentMethodButton type="bankSlip" onClick={() => setPayementMethodSection("bankSlip")}/>
-                    <PaymentMethodButton type="creditCard" onClick={() => setPayementMethodSection("creditCard")}/>
-                    <PaymentMethodButton type="pix" onClick={() => setPayementMethodSection("pix")}/>
+                    <PaymentMethodButton 
+                        isSelected={paymentMethodSection === "bankSlip"} 
+                        selectedColor={userColor}
+                        type="bankSlip" 
+                        onClick={() => setPayementMethodSection("bankSlip")}
+                    />
+                    <PaymentMethodButton 
+                        isSelected={paymentMethodSection === "creditCard"} 
+                        selectedColor={userColor}
+                        type="creditCard" 
+                        onClick={() => setPayementMethodSection("creditCard")}
+                    />
+                    <PaymentMethodButton 
+                        isSelected={paymentMethodSection === "pix"} 
+                        selectedColor={userColor}
+                        type="pix" 
+                        onClick={() => setPayementMethodSection("pix")}
+                    />
                 </PaymentMethodsContainer>
+                <Divider />
                 {paymentMethodSection === "bankSlip" && (
                     <form>
                         <InputComponent 

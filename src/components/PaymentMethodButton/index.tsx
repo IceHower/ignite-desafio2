@@ -5,9 +5,11 @@ import { ImBarcode } from "react-icons/im";
 import { MdPix } from "react-icons/md";
 interface PaymentMethodButtonProps extends HtmlHTMLAttributes<HTMLButtonElement>{
     type: "creditCard" | "bankSlip" | "pix";
+    isSelected: boolean;
+    selectedColor?: string;
 }
 
-export function PaymentMethodButton({ type, ...rest }: PaymentMethodButtonProps) {
+export function PaymentMethodButton({ type, isSelected, selectedColor, ...rest }: PaymentMethodButtonProps) {
     function formatType(type: "creditCard" | "bankSlip" | "pix") {
         const types = {
             "creditCard": "Cartão",
@@ -25,7 +27,11 @@ export function PaymentMethodButton({ type, ...rest }: PaymentMethodButtonProps)
         return types[type];
     }
     return (
-        <ButtonContainer {...rest}>
+        <ButtonContainer 
+            isSelected={isSelected} 
+            selectedColor={selectedColor} 
+            {...rest}
+        >
             <div>
                 {getIcon(type)}
                 {formatType(type)}

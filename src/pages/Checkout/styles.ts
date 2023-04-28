@@ -81,7 +81,11 @@ export const PaymentMethodsContainer = styled.div`
     width: 100%;
     max-height: 55px;
     gap: 10px;
-    border-bottom: 1px solid #d1d1d1;
-    margin-bottom: 10px;
     justify-content: center;
+`
+
+export const Divider = styled.div`
+    width: 100%;
+    border-bottom: 1px solid #d1d1d1;
+    margin: 10px 0px;
 `
