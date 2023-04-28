@@ -89,3 +89,18 @@ export const Divider = styled.div`
     border-bottom: 1px solid #d1d1d1;
     margin: 10px 0px;
 `
+
+export const FinishContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    img {
+        width: 180px;
+        height: 180px;
+    }
+    p {
+        width: 420px;
+    }
+`

@@ -1,4 +1,4 @@
-import { Container, SectionItems, CheckoutContainer, PaymentMethodsContainer, Divider } from "./styles"
+import { Container, SectionItems, CheckoutContainer, PaymentMethodsContainer, Divider, FinishContainer } from "./styles"
 import logoSeller from "../../assets/images/logo_seller.png"
 import { useCart } from "../../hooks/useCart"
 import { formatPrice } from '../../util/format';
@@ -162,10 +162,10 @@ export function Checkout() {
                     </form>
                 )}
                 {paymentMethodSection === "finish" && (
-                    <>
+                    <FinishContainer>
                         <img src={qrcode} />
                         <p>00020126580014br.gov.bcb.pix013600ffd443-200c-4bf7-b81e-1b1ec0d0199352040000530398654042.005802BR5924BARTEBARTE202301191518426009Sao Paulo62240520mpqrinter574568675646304512E</p>
-                    </>
+                    </FinishContainer>
                 )}
             </CheckoutContainer>
         </Container>
