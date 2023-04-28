@@ -1,21 +1,23 @@
 import React, { ButtonHTMLAttributes } from 'react'
-import { ButtonContainer } from './styles'
+import { ButtonContainer, Spinner } from './styles'
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode
   variant?: 'primary' | 'ghost' | 'link' | 'cancel' | 'alternative'
   backgroundColor: string;
+  isLoading?: boolean;
 }
 
 const Button = ({
   variant = 'primary',
+  isLoading = false,
   children,
   backgroundColor,
   ...rest
 }: Props): JSX.Element => {
   return (
     <ButtonContainer backgroundColor={backgroundColor} variant={variant} {...rest}>
-      {children}
+      {isLoading ? <Spinner /> : children}
     </ButtonContainer>
   )
 }

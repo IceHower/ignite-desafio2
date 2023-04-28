@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 export const Wrapper = styled.div`
   position: relative;
@@ -56,3 +56,17 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
     margin-right: 1rem;
   }
 `
+const spin = keyframes`
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const Spinner = styled.div`
+  border: 2px solid #ccc;
+  border-top: 2px solid #fff;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: ${spin} 1s linear infinite;
+`;

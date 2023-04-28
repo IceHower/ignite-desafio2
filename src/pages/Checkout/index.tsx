@@ -9,6 +9,9 @@ import Button from "../../components/button";
 export function Checkout() {
     const userColor =  "#0C89BB";
     const [paymentMethodSection, setPayementMethodSection] = useState("bankSlip");
+    const [hasFinishOrder, setHasFinishOrder] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+
     const { cart } = useCart();
     const cartFormatted = cart.map(product => ({
         ...product,
@@ -19,12 +22,22 @@ export function Checkout() {
     const total = formatPrice(cartFormatted.reduce((sumTotal, product) => {
         return sumTotal += product.subtotal;
     }, 0))
+
+    const handleSubmit = () => {
+        try {
+
+        } catch {
+            
+        } finally {
+
+        }
+    }
     return(
         <Container>
             <SectionItems backgroundColor={userColor}>
                 <section>
                     <img src={logoSeller} />
-                    <strong>Nome Seller</strong>
+                    <strong>Acme</strong>
                 </section>
                 <div>
                     <p>Total</p>
@@ -81,7 +94,12 @@ export function Checkout() {
                             label="Nome"
                             filledColor={userColor}
                         />
-                        <Button backgroundColor={userColor}>
+                        <Button 
+                            type="button" 
+                            isLoading={isLoading} 
+                            backgroundColor={userColor} 
+                            onClick={() => setIsLoading(true)}
+                        >
                             Finalizar pagamento
                         </Button>
                     </form>
@@ -108,7 +126,12 @@ export function Checkout() {
                             label="País"
                             filledColor={userColor}
                         />
-                        <Button backgroundColor={userColor}>
+                        <Button 
+                            type="button" 
+                            isLoading={isLoading} 
+                            backgroundColor={userColor} 
+                            onClick={() => setIsLoading(true)}
+                        >
                             Finalizar pagamento
                         </Button>
                     </form>
@@ -125,7 +148,12 @@ export function Checkout() {
                             label="Nome"
                             filledColor={userColor}
                         />
-                        <Button backgroundColor={userColor}>
+                        <Button 
+                            type="button" 
+                            isLoading={isLoading} 
+                            backgroundColor={userColor} 
+                            onClick={() => setIsLoading(true)}
+                        >
                             Finalizar pagamento
                         </Button>
                     </form>
