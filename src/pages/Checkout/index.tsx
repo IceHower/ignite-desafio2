@@ -23,13 +23,14 @@ export function Checkout() {
         return sumTotal += product.subtotal;
     }, 0))
 
-    const handleSubmit = () => {
+    const handleSubmit = async() => {
         try {
-
+            setIsLoading(true);
+            await new Promise(resolve => setTimeout(resolve, 5000))
         } catch {
             
         } finally {
-
+            setIsLoading(false);
         }
     }
     return(
@@ -98,7 +99,7 @@ export function Checkout() {
                             type="button" 
                             isLoading={isLoading} 
                             backgroundColor={userColor} 
-                            onClick={() => setIsLoading(true)}
+                            onClick={handleSubmit}
                         >
                             Finalizar pagamento
                         </Button>
@@ -130,7 +131,7 @@ export function Checkout() {
                             type="button" 
                             isLoading={isLoading} 
                             backgroundColor={userColor} 
-                            onClick={() => setIsLoading(true)}
+                            onClick={handleSubmit}
                         >
                             Finalizar pagamento
                         </Button>
@@ -152,7 +153,7 @@ export function Checkout() {
                             type="button" 
                             isLoading={isLoading} 
                             backgroundColor={userColor} 
-                            onClick={() => setIsLoading(true)}
+                            onClick={handleSubmit}
                         >
                             Finalizar pagamento
                         </Button>
